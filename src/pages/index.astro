@@ -2,11 +2,12 @@
 import { HeroSlider1, HeroSlider2, HeroSlider3 } from "@static/images";
 import Layout from "../layouts/Layout.astro";
 import { Hero } from "@modules/Hero";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
 ---
 
 <Layout
   title="Dalopeza | Webdeveloper & Designer"
-  description="YOUR META DESCRIPTION FOR SEO"
+  description="Soy desarrollador web y diseñador gráfico, con 10 años de experiencia mi trabajo es conceptual basado en el logo, slogan y colores de su marca."
 >
   <main class="page-content">
     <Hero
@@ -18,7 +19,7 @@ import { Hero } from "@modules/Hero";
           title: "Dalo",
           background: HeroSlider1.src,
           paragraph:
-            "Soy desarrollador web y diseñador gráfico, con 12 años de experiencia mi trabajo es conceptual basado en el logo, slogan y colores de su marca, para realizarlo uso suit adobe, html5, framework, php, mysql, css, js, jquery, software libre(cms, e-commerce), react, node.js, mongoDB, flutter, npm.",
+            "Soy desarrollador web y diseñador gráfico con más de 12 años de experiencia creando soluciones digitales a medida. Mi enfoque combina creatividad y funcionalidad, desarrollando cada proyecto a partir del logo, eslogan y paleta de colores de tu marca. Trabajo con tecnologías como HTML5, CSS, JavaScript, jQuery, PHP, MySQL, React, Node.js, Nuxt, MongoDB, Flutter y más. Uso herramientas de diseño profesional como la suite de Adobe, y plataformas modernas como CMS, e-commerce, Vercel y Docker. Transformo ideas en experiencias visuales y funcionales.",
           button: {
             text: "Portafolio",
             link: "/portafolio",
@@ -47,5 +48,6 @@ import { Hero } from "@modules/Hero";
         },
       ]}
     />
+    <WhatsAppButton />
   </main>
 </Layout>

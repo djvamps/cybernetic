@@ -2,7 +2,11 @@ import styled from "@emotion/styled";
 import { Theme } from "@styles/colors";
 import { MediaQuery } from "@styles/mediaQuery";
 
+
+
 export const FullPageSliderStyled = styled.div`
+
+
     width: 100%;
 
     display: flex;
@@ -234,3 +238,4 @@ export const FullPageSliderTextToSlide = styled.span`
         margin-left: 10px;
     }
 `;
+

@@ -4,12 +4,10 @@ import { Hero } from "@modules/Hero";
 import { HeroSlider3, InfiniteImg1, InfiniteImg2 } from "@static/images";
 import { ServiceCards } from "@modules/ServiceCards";
 import { Footer } from "@modules/Footer";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
 ---
 
-<Layout
-  title="Cybernetic | Homepage"
-  description="YOUR META DESCRIPTION FOR SEO"
->
+<Layout title="Dalopeza | Homepage" description="YOUR META DESCRIPTION FOR SEO">
   <main class="page-content">
     <Hero
       heroType="ParallaxImage"
@@ -86,6 +84,7 @@ import { Footer } from "@modules/Footer";
           "with infinite dashboard you can easily manage your community, create posts, and interact with your followers.",
       }}
     />
+    <WhatsAppButton />
   </main>
   <Footer />
 </Layout>
