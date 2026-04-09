@@ -1,0 +1,4 @@
+This is a Brave Creators publisher verification file.
+
+Domain: dalopeza.netlify.app
+Token: d30730556f10bf1dc0cbd425d061a01e24a1da891dc6d92f724d942151cd36e8

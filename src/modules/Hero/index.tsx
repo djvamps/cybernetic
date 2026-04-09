@@ -19,17 +19,17 @@ import {
  */
 type HeroProps =
     | {
-          heroType: "textImage";
-          data: TextImageProps;
-      }
+        heroType: "textImage";
+        data: TextImageProps;
+    }
     | {
-          heroType: "fullPageSlider";
-          data: FullPageSliderProps["content"];
-      }
+        heroType: "fullPageSlider";
+        data: FullPageSliderProps["content"];
+    }
     | {
-          heroType: "ParallaxImage";
-          data: ParallaxImageProps;
-      };
+        heroType: "ParallaxImage";
+        data: ParallaxImageProps;
+    };
 
 export const Hero: FC<HeroProps> = ({ heroType, data, ...rest }) => {
     /*

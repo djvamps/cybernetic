@@ -14,15 +14,13 @@ export const Navigation: FC = () => {
                         <a href="/">Casa</a>
                     </li>
                     <li>
-                        <a
-                            href="/portafolio"
-                            
-                        >
-                            Portafolio
-                        </a>
+                        <a href="/portafolio">Bio</a>
                     </li>
                     <li>
-                        <a href="/infinite">Solucio..</a>
+                        <a href="/portafolio">Portafolio</a>
+                    </li>
+                    <li>
+                        <a href="/infinite">Solucion</a>
                     </li>
                     <li>
                         <a href="/contact">Contact</a>
