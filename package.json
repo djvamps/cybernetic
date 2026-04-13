@@ -19,7 +19,6 @@
     "aos": "^2.3.4",
     "astro": "^4.16.7",
     "axios": "^1.6.8",
-    "firebase-tools": "^13.23.0",
     "gsap": "^3.12.5",
     "react-device-detect": "^2.2.3",
     "react-hook-form": "^7.51.3",
