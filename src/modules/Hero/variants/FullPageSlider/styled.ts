@@ -155,8 +155,8 @@ export const FullPageSliderSlideContent = styled.div`
     color: ${Theme.primary};
 
     h1 {
-        font-size: 180px;
-        line-height: 130px;
+        font-size: 150px;
+        line-height: 120px;
         text-transform: uppercase;
         font-weight: 900;
         margin-left: -15px;
