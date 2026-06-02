@@ -38,7 +38,7 @@ export const FullPageSlider: FC<FullPageSliderProps> = ({ content }) => {
                     <img src={slide.background} alt={slide.title} />
                 </S.FullPageSliderSlideImg>
             )}
-            <FadeIn>
+            
                 <S.FullPageSliderSlideContent data-swiper-parallax="-40%">
                     {slide.subtitle && (
                         <S.FullPageSliderSlideContentSubtitle>
@@ -57,7 +57,7 @@ export const FullPageSlider: FC<FullPageSliderProps> = ({ content }) => {
                         </Button>
                     )}
                 </S.FullPageSliderSlideContent>
-            </FadeIn>
+            
         </S.FullPageSliderSlide>
     ));
 
@@ -80,6 +80,14 @@ export const FullPageSlider: FC<FullPageSliderProps> = ({ content }) => {
                     },
                     autoplay: {
                         delay: 5000,
+                    },
+                    breakpoints: {
+                        0: {
+                            parallax: false,
+                        },
+                        768: {
+                            parallax: true,
+                        },
                     },
                 }}
             >

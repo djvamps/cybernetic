@@ -29,8 +29,8 @@ export const FadeIn: FC<FadeInProps> = ({ children, delay }) => {
             },
             {
                 root: null,
-                rootMargin: "-50px",
-                threshold: 0.1,
+                rootMargin: "0px",
+                threshold: 0.01,
             }
         );
 

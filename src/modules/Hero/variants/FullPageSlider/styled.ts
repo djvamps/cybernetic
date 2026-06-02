@@ -20,6 +20,11 @@ export const FullPageSliderStyled = styled.div`
     height: 100dvh;
     min-height: 550px;
 
+    ${MediaQuery.max("xl")} {
+    height: 100svh;
+    min-height: unset;
+}
+
     background: ${Theme.secondary};
     position: relative;
     overflow: hidden;
@@ -146,7 +151,7 @@ export const FullPageSliderSlideImg = styled.figure`
 
 export const FullPageSliderSlideContent = styled.div`
     position: relative;
-    z-index: 2;
+    z-index: 10;
     color: ${Theme.primary};
 
     h1 {
