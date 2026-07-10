@@ -18,7 +18,7 @@ export const Socials: FC = ({ ...rest }) => {
                 </S.SocialsListItem>
                 <S.SocialsListItem>
                     <S.SocialsLink
-                        href="https://linkedin.com"
+                        href="https://www.linkedin.com/in/dalopeza9"
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -28,7 +28,7 @@ export const Socials: FC = ({ ...rest }) => {
                 </S.SocialsListItem>
                 <S.SocialsListItem>
                     <S.SocialsLink
-                        href="https://facebook.com"
+                        href="https://www.facebook.com/dalopeza9/"
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -38,7 +38,7 @@ export const Socials: FC = ({ ...rest }) => {
                 </S.SocialsListItem>
                 <S.SocialsListItem>
                     <S.SocialsLink
-                        href="https://twitter.com"
+                        href="https://x.com/djvamps"
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -48,7 +48,7 @@ export const Socials: FC = ({ ...rest }) => {
                 </S.SocialsListItem>
                 <S.SocialsListItem>
                     <S.SocialsLink
-                        href="https://instagram.com"
+                        href="https://www.instagram.com/djvamps2007/"
                         target="_blank"
                         rel="noreferrer"
                     >

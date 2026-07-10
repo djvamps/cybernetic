@@ -1,0 +1,261 @@
+---
+const FORMSPREE_ID = "xdarqver"; 
+---
+
+<div class="form-container">
+  <!-- Agregamos un ID al formulario -->
+  <form id="contact-form" action={`https://formspree.io/f/${FORMSPREE_ID}`} method="POST">
+    
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="name">Nombre completo</label>
+        <input type="text" name="name" id="name" required placeholder="Tu nombre" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input type="email" name="email" id="email" required placeholder="correo@ejemplo.com" />
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="phone">Teléfono</label>
+        <input type="tel" name="phone" id="phone" placeholder="+51 900 000 000" />
+      </div>
+      <div class="form-group hidden-mobile"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Mensaje</label>
+      <textarea name="message" id="message" rows="5" required placeholder="¿En qué te puedo ayudar?"></textarea>
+    </div>
+
+    <div class="btn-container">
+      <button type="submit" id="submit-btn">Enviar mensaje</button>
+    </div>
+
+  </form>
+
+  <!-- Mensaje de éxito oculto por defecto -->
+  <div id="success-message" class="success-box hidden">
+    <div class="success-icon">✓</div>
+    <h3>¡Mensaje enviado con éxito!</h3>
+    <p>Gracias por contactarte. Te responderé lo antes posible.</p>
+  </div>
+</div>
+
+<!-- Lógica de JavaScript para procesar el envío sin recargar la página -->
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const successMessage = document.getElementById('success-message');
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+
+  if (form && successMessage && submitBtn) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); // Evita la redirección externa
+      
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Enviando...";
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          form.reset(); // Limpia los campos
+          form.classList.add('hidden'); // Oculta el formulario
+          successMessage.classList.remove('hidden'); // Muestra el mensaje de éxito
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.innerText = "Enviar mensaje";
+          alert("Hubo un problema al enviar el formulario. Por favor, inténtalo de nuevo.");
+        }
+      } catch (error) {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Enviar mensaje";
+        alert("Error de conexión. Inténtalo más tarde.");
+      }
+    });
+  }
+</script>
+
+<style>
+  .form-container {
+    width: 100%;
+    max-width: 1070px;
+    margin: 2rem auto 0 auto;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    box-sizing: border-box;
+    border: 1px solid #f3f4f6;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  @media (min-width: 768px) {
+    .form-container {
+      padding: 3rem;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  /* Clase para ocultar elementos uniformemente */
+  form.hidden, .hidden {
+    display: none !important;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .form-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .hidden-mobile {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .hidden-mobile {
+      display: block;
+    }
+  }
+
+  label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #374151;
+    font-family: "Roboto", sans-serif;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    border-radius: 0.85rem;
+    border: 1px solid #e5e7eb;
+    background-color: #ffffff;
+    font-size: 1rem;
+    color: #1f2937;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+  }
+
+  input:focus, textarea:focus {
+    border-color: #16a34a;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem; 
+  }
+
+  @media (min-width: 768px) {
+    .btn-container {
+      margin-bottom: 0;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 0.9rem 2.5rem;
+    background-color: #16a34a;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    font-family: "Roboto", sans-serif;
+  }
+
+  button:hover:not(:disabled) {
+    background-color: #15803d;
+  }
+
+  button:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+  }
+
+  button:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  @media (min-width: 768px) {
+    button {
+      width: auto;
+    }
+  }
+
+  /* Estilos del recuadro de éxito */
+  .success-box {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: "Roboto", sans-serif;
+    animation: fadeIn 0.4s ease forwards;
+  }
+
+  .success-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #dcfce7;
+    color: #16a34a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin: 0 auto 1.5rem auto;
+  }
+
+  .success-box h3 {
+    font-size: 1.5rem;
+    color: #1f2937;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .success-box p {
+    font-size: 1rem;
+    color: #4b5563;
+    margin: 0;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
