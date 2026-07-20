@@ -42,8 +42,8 @@ export const Contact: FC = () => {
                 <FadeIn delay={0.3}>
                     <TextBox variant="background-text" bgText="Address">
                         <h3>Address</h3>
-                        <p>Some street 123, 12345 City, Country</p>
-                        <p>Office: Mystr street 321, 54321 City, Country</p>
+                        <p>Lima - Peru</p>
+                        <p>Comas - Lorenzo Valderrama</p>
                     </TextBox>
                 </FadeIn>
             </S.ContainerStyled>
