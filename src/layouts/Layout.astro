@@ -38,6 +38,7 @@ const { title, description, overwritePreview } = Astro.props;
       description={description}
       preview={overwritePreview ? overwritePreview : PreviewPng.src}
     />
+    <link rel="canonical" href="https://dalopeza.netlify.app/" />
     <title>{title}</title>
     <Global styles={NormalizeCSS} />
 
